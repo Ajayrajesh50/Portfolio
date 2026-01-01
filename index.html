@@ -1,306 +1,451 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ajay R | Software Developer</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ajay R | Software Developer Portfolio | MERN Stack, Frontend, Backend, Projects, Resume" />
+  <meta name="keywords" content="Ajay R, Software Developer, MERN Stack, Full Stack Developer, Portfolio, Web Developer" />
+  <meta name="author" content="Ajay R" />
+  <title>Ajay R | Software Developer Portfolio</title>
 
-<!-- Font Awesome Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-/* =====================
-   GLOBAL STYLES
-===================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-}
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-body {
-  background-color: #f5f7fa;
-  color: #333;
-  line-height: 1.6;
-}
+  <style>
+    :root {
+      --bg-dark: #0f172a;
+      --bg-light: #111827;
+      --primary: #38bdf8;
+      --secondary: #22c55e;
+      --text-light: #e5e7eb;
+      --text-muted: #9ca3af;
+      --card-bg: rgba(255,255,255,0.05);
+      --glass: rgba(255,255,255,0.08);
+    }
 
-/* =====================
-   HEADER
-===================== */
-header {
-  background: #1f2933;
-  color: #fff;
-  text-align: center;
-  padding: 40px 20px;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-header h1 {
-  font-size: 2.6rem;
-}
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, var(--bg-dark), var(--bg-light));
+      color: var(--text-light);
+      line-height: 1.6;
+    }
 
-header h2 {
-  font-weight: 400;
-  margin-top: 10px;
-}
+    a { color: inherit; text-decoration: none; }
 
-header .contact a {
-  color: #fff;
-  margin: 15px 10px;
-  font-size: 1.5rem;
-  display: inline-block;
-}
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(15,23,42,0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
 
-/* =====================
-   SECTIONS
-===================== */
-section {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 0 20px;
-}
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-section h3 {
-  margin-bottom: 15px;
-  color: #1f2933;
-  font-size: 1.6rem;
-}
+    .logo {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
 
-/* =====================
-   SKILLS
-===================== */
-.skills {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
+    .nav-links a {
+      margin-left: 1.5rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      transition: color 0.3s;
+    }
 
-.skill-box {
-  background: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  width: 300px;
-}
+    .nav-links a:hover {
+      color: var(--primary);
+    }
 
-.skill-box h4 {
-  margin-bottom: 10px;
-}
+    /* HERO */
+    header {
+      min-height: 100vh;
+      background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.95)),
+                  url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+    }
 
-/* =====================
-   PROJECTS
-===================== */
-.project {
-  display: flex;
-  gap: 20px;
-  background: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
+    .hero {
+      max-width: 1200px;
+      margin: auto;
+      padding: 6rem 2rem 2rem;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3rem;
+      align-items: center;
+    }
 
-.project img {
-  width: 150px;
-  height: 100px;
-  background: #ccc;
-  border-radius: 5px;
-  object-fit: cover;
-}
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
 
-/* =====================
-   EXPERIENCE
-===================== */
-.experience ul {
-  margin-left: 20px;
-}
+    .hero h1 span {
+      color: var(--primary);
+    }
 
-/* =====================
-   CTA
-===================== */
-.cta {
-  background: #1f2933;
-  color: #fff;
-  text-align: center;
-  padding: 40px 20px;
-}
+    .hero p {
+      margin: 1.2rem 0;
+      color: var(--text-muted);
+      max-width: 600px;
+    }
 
-.cta button {
-  margin-top: 15px;
-  padding: 12px 25px;
-  font-size: 16px;
-  border: none;
-  background: #38bdf8;
-  cursor: pointer;
-  border-radius: 5px;
-}
+    .hero-buttons a {
+      display: inline-block;
+      margin-right: 1rem;
+      margin-top: 1rem;
+      padding: 0.8rem 1.6rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+    }
 
-/* =====================
-   RESPONSIVE
-===================== */
-@media (max-width: 768px) {
-  .project {
-    flex-direction: column;
-  }
-}
-</style>
+    .btn-primary {
+      background: var(--primary);
+      color: #000;
+    }
+
+    .btn-primary:hover { transform: translateY(-3px); }
+
+    .btn-outline {
+      border: 1px solid var(--primary);
+      color: var(--primary);
+    }
+
+    .hero-card {
+      background: var(--glass);
+      border-radius: 20px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .hero-card img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 6rem 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .section-title span {
+      color: var(--primary);
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .about-card {
+      background: var(--card-bg);
+      padding: 2rem;
+      border-radius: 20px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .stat {
+      background: var(--glass);
+      padding: 1.5rem;
+      border-radius: 15px;
+      text-align: center;
+    }
+
+    .stat h3 { color: var(--primary); font-size: 1.6rem; }
+
+    /* SKILLS (REDESIGNED) */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-card {
+      background: linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+      border-radius: 20px;
+      padding: 1.8rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .skill-card i {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap: 2rem;
+    }
+
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+
+    .project-card:hover { transform: translateY(-10px); }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 1.5rem;
+    }
+
+    /* TIMELINE */
+    .timeline {
+      border-left: 2px solid var(--primary);
+      padding-left: 2rem;
+    }
+
+    .timeline-item {
+      margin-bottom: 2rem;
+    }
+
+    .timeline-item h4 { color: var(--primary); }
+
+    /* CONTACT */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.9rem;
+      margin-bottom: 1rem;
+      border-radius: 10px;
+      border: none;
+      background: var(--glass);
+      color: var(--text-light);
+    }
+
+    form button {
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      border: none;
+      background: var(--primary);
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: var(--text-muted);
+    }
+
+    @media(max-width: 900px) {
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      nav .nav-links { display: none; }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- =====================
-     HEADER
-===================== -->
-<header>
-  <h1>Ajay R</h1>
-  <h2>Software Developer | MERN Stack Enthusiast</h2>
-  <div class="contact">
-    <a href="mailto:ajay@email.com"><i class="fas fa-envelope"></i></a>
-    <a href="https://github.com/yourgithub" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://linkedin.com/in/yourlinkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
-  </div>
-</header>
-
-<!-- =====================
-     ABOUT ME
-===================== -->
-<section>
-  <h3>About Me</h3>
-  <p>
-    I am a passionate Software Developer with a strong interest in building
-    responsive and scalable web applications. I am currently focusing on MERN
-    stack development and continuously improving my problem-solving and coding
-    skills. My goal is to become a professional full-stack developer and work
-    on impactful real-world projects.
-  </p>
-</section>
-
-<!-- =====================
-     SKILLS
-===================== -->
-<section>
-  <h3>Skills</h3>
-  <div class="skills">
-
-    <div class="skill-box">
-      <h4>Frontend</h4>
-      <ul>
-        <li>HTML5</li>
-        <li>CSS3</li>
-        <li>JavaScript</li>
-        <li>React</li>
-      </ul>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-container">
+      <div class="logo">Ajay R</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
+  </nav>
 
-    <div class="skill-box">
-      <h4>Backend</h4>
-      <ul>
-        <li>Node.js</li>
-        <li>Express.js</li>
-        <li>Python</li>
-      </ul>
+  <!-- HERO -->
+  <header>
+    <div class="hero">
+      <div>
+        <h1>Hi, I'm <span>Ajay R</span></h1>
+        <h2>Software Developer</h2>
+        <p>Final-year Information Science Engineering student and aspiring Full Stack MERN Developer. I build clean, scalable, and user-focused web applications with modern technologies.</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="#contact" class="btn-outline">Hire Me</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <img src="https://via.placeholder.com/300" alt="Ajay R">
+        <p><i class="fa-solid fa-location-dot"></i> India</p>
+        <p><i class="fa-solid fa-envelope"></i> ajay@email.com</p>
+      </div>
     </div>
+  </header>
 
-    <div class="skill-box">
-      <h4>Database & Tools</h4>
-      <ul>
-        <li>MongoDB</li>
-        <li>MySQL</li>
-        <li>Git & GitHub</li>
-        <li>Docker (Basics)</li>
-      </ul>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About <span>Me</span></h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <p>I am a motivated software developer with a strong foundation in web development and problem-solving. Currently pursuing my final year in Information Science Engineering, I am focused on mastering the MERN stack and building real-world projects.</p>
+          <p>I enjoy turning complex problems into simple, beautiful, and intuitive solutions. My goal is to become a skilled full stack developer and contribute to impactful software products.</p>
+        </div>
+        <div>
+          <div class="stats">
+            <div class="stat"><h3>15+</h3><p>Projects</p></div>
+            <div class="stat"><h3>300+</h3><p>Hours Coding</p></div>
+            <div class="stat"><h3>5+</h3><p>Tech Skills</p></div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-  </div>
-</section>
-
-<!-- =====================
-     PROJECTS
-===================== -->
-<section>
-  <h3>Projects</h3>
-
-  <div class="project">
-    <img alt="Project Image">
-    <div>
-      <h4>Expense Tracker App (2024)</h4>
-      <p>
-        A web application that helps users track daily expenses and manage
-        monthly budgets efficiently.
-      </p>
-      <p><strong>Tech Stack:</strong> React, CSS, Firebase</p>
-      <a href="#">Live Demo</a> | <a href="#">GitHub</a>
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">My <span>Skills</span></h2>
+      <div class="skills-grid">
+        <div class="skill-card"><i class="fa-brands fa-html5"></i><h3>HTML5</h3><p>Semantic, accessible markup</p></div>
+        <div class="skill-card"><i class="fa-brands fa-css3-alt"></i><h3>CSS3</h3><p>Responsive & modern layouts</p></div>
+        <div class="skill-card"><i class="fa-brands fa-js"></i><h3>JavaScript</h3><p>ES6+, DOM, logic</p></div>
+        <div class="skill-card"><i class="fa-brands fa-react"></i><h3>React</h3><p>Components & hooks</p></div>
+        <div class="skill-card"><i class="fa-solid fa-database"></i><h3>MongoDB</h3><p>NoSQL databases</p></div>
+        <div class="skill-card"><i class="fa-brands fa-node"></i><h3>Node.js</h3><p>Backend APIs</p></div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="project">
-    <img alt="Project Image">
-    <div>
-      <h4>Responsive Portfolio Website (2023)</h4>
-      <p>
-        Designed and developed a fully responsive personal portfolio website
-        with clean UI.
-      </p>
-      <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript</p>
-      <a href="#">Live Demo</a> | <a href="#">GitHub</a>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">My <span>Projects</span></h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Project">
+          <div class="project-content">
+            <h3>Expense Tracker App</h3>
+            <p>A full-stack expense tracking application with authentication and analytics.</p>
+            <a href="#">GitHub</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="Project">
+          <div class="project-content">
+            <h3>Portfolio Website</h3>
+            <p>Personal responsive portfolio using HTML, CSS, and JavaScript.</p>
+            <a href="#">Live Demo</a>
+          </div>
+        </div>
+        <div class="project-card">
+          <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?auto=format&fit=crop&w=800&q=80" alt="Project">
+          <div class="project-content">
+            <h3>Student Management System</h3>
+            <p>CRUD-based web app for managing student records.</p>
+            <a href="#">GitHub</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-</section>
+  <!-- RESUME -->
+  <section id="resume">
+    <div class="container">
+      <h2 class="section-title">My <span>Journey</span></h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h4>2022 - 2026</h4>
+          <p>B.E. Information Science Engineering</p>
+        </div>
+        <div class="timeline-item">
+          <h4>2024</h4>
+          <p>MERN Stack Internship</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- =====================
-     EXPERIENCE
-===================== -->
-<section>
-  <h3>Experience</h3>
-  <div class="experience">
-    <h4>Web Development Intern</h4>
-    <p><em>ABC Technologies | Jun 2024 – Aug 2024</em></p>
-    <ul>
-      <li>Developed responsive web pages using HTML, CSS, and JavaScript</li>
-      <li>Improved UI and form validation</li>
-      <li>Collaborated using GitHub and Git workflows</li>
-      <li>Optimized website performance</li>
-    </ul>
-    <p><strong>Technologies:</strong> HTML, CSS, JavaScript</p>
-  </div>
-</section>
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact <span>Me</span></h2>
+      <div class="contact-grid">
+        <div>
+          <p>Let's connect and build something amazing together.</p>
+          <p><i class="fa-brands fa-linkedin"></i> LinkedIn</p>
+          <p><i class="fa-brands fa-github"></i> GitHub</p>
+        </div>
+        <form>
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <textarea rows="4" placeholder="Your Message"></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
-<!-- =====================
-     EDUCATION
-===================== -->
-<section>
-  <h3>Education</h3>
-  <p>
-    <strong>B.E. Information Science & Engineering</strong><br>
-    XYZ College of Engineering – 2025<br>
-    Relevant Coursework: Data Structures, DBMS, Web Development
-  </p>
-</section>
-
-<!-- =====================
-     CERTIFICATIONS
-===================== -->
-<section>
-  <h3>Certifications</h3>
-  <ul>
-    <li>Full Stack Web Development Certification</li>
-    <li>Python Programming – Beginner to Intermediate</li>
-  </ul>
-</section>
-
-<!-- =====================
-     CALL TO ACTION
-===================== -->
-<section class="cta">
-  <h3>Let’s Work Together!</h3>
-  <p>Open to internships, freelance projects, and full-time opportunities.</p>
-  <button onclick="contactMe()">Contact Me</button>
-</section>
-
-<script>
-function contactMe() {
-  alert("Thanks for visiting! You can contact me at ajay@email.com");
-}
-</script>
+  <footer>
+    <p>© 2026 Ajay R. All Rights Reserved.</p>
+  </footer>
 
 </body>
 </html>
